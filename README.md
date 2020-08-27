@@ -1,10 +1,9 @@
-# web_scraping-Intership_task
+# web_scraping-Intership_task_Tripper
 
-Extracted various fields of information from housing website using web scraping. As the website requires redirecting to different url and scrolling and many other tasks, [Selenium](https://selenium-python.readthedocs.io/) is used in order to facilitate these tasks. There are 3 parameters required for the scroll function, they are driver, timeout (time to wait till next scroll) and number of times to scroll respectively. Set the number of times to scroll according to the number of data entries you require. Magicbricks loads 30 new houses everytime you scroll and reach the end of the website, so as I require information of 500 houses, I have set it as 18 (18 x30 = 540), and later I have kept 500 in the for loop for only information of 500 houses in the csv file.
+Extracted various fields of information from housing website using web scraping. As the website requires searching a particular word, redirecting to another url and many other tasks, [Selenium](https://selenium-python.readthedocs.io/) is used in order to facilitate these tasks. When we try to get the place names directly, we get the numerical before it as well. In order to get only the place name, the remdig function removes the digits from the names and then returns the place name. As the places are distributed in various pages, we first store the redirect url links of each page in a list in order to traverse in it to go to the next page later.
 
 ## Python libraries used:
 > * [Selenium](https://selenium-python.readthedocs.io/)
-> * [Time](https://docs.python.org/3/library/time.html)
 > * [Pandas](https://pandas.pydata.org/)
 
 
@@ -13,29 +12,7 @@ Extracted various fields of information from housing website using web scraping.
 > * [ChromeDriver](https://chromedriver.chromium.org/)
 
 ## Directions to use:
-> * This is designed for only magicbricks. You can provide the searched url in a specific locality.
+> * This is designed for only holidify. You can change the place name you want to search to get the different data.
 > * Make sure you have good internet connection and keep the system on while the process takes place.
-> * You will get various pieces of information from the website like:
->> * Price
->> * Headline
->> * Address
->> * Owner
->> * Bedrooms
->> * Bathrooms
->> * Balconies
->> * Super area
->> * Price Per sqft
->> * Status
->> * Transaction type
->> * Floor
->> * Car parking
->> * Furnished
->> * Lifts
->> * Descrption
->> * Price breakup
->> * Address2
->> * Landmarks
->> * Age of Construction
->> * Price comparison
->> * Expected rent
->> * Monthly EMI
+> * You will get various pieces of information from the website like Place Names and Descriptions.
+> * Rename the csv file you want to save according to your needs.
