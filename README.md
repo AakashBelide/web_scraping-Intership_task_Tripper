@@ -1,6 +1,6 @@
 # web_scraping-Intership_task_Tripper
 
-Extracted various fields of information from travel website using web scraping. As the website requires searching a particular word, redirecting to another url and many other tasks, [Selenium](https://selenium-python.readthedocs.io/) is used in order to facilitate these tasks. When we try to get the place names directly, we get the numerical before it as well. In order to get only the place name, the remdig function removes the digits from the names and then returns the place name. As the places are distributed in various pages, we first store the redirect url links of each page in a list in order to traverse in it to go to the next page later.
+Extracted various fields of information from travel website ([Holidify](https://www.holidify.com/)) using web scraping. As it requires searching a particular word, redirecting to another URL, and many other tasks, [Selenium](https://selenium-python.readthedocs.io/) is used in order to facilitate these tasks. When we try to get the place names directly, we get the numerical before it as well. In order to get only the place name, the remdig function removes the digits from the names and then returns the place name. As the places are distributed in various pages, we first store the redirect URL links of each page in a list in order to traverse in it to go to the next page later.
 
 > ## Python libraries used:
 > * [Selenium](https://selenium-python.readthedocs.io/)
