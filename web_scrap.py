@@ -64,7 +64,7 @@ try:
 except:
     print("Place names and descriptions not located")
 
-#Creating a pandas dataframe and assigning respective headers and then assign the lists respectively
+#Creating a pandas dataframe and assigning respective headers and then assigning the lists respectively
 df = pd.DataFrame(list(zip(p_name, desc)), columns = ['Place Name', 'Description'])
 #Converting pandas dataframes to csv file
 holidify = df.to_csv('hello_tripper_internship.csv', index=False)
