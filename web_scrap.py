@@ -1,14 +1,14 @@
-#Belide Aakash (Data Science Internship Task - Hello Tripper)
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 
-#Install Chrome driver before running the code and mention the path of the driver located in your computer
-PATH = "C:\Program Files (x86)\chromedriver.exe"
-driver = webdriver.Chrome(PATH)
+#Installs Chrome driver if latest version is not available
+chrome_options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
 
 #Url on which web scraping has to be done
 url = "https://www.holidify.com/"
@@ -26,9 +26,10 @@ def remdig(s):
 
 #Locating the search bar and then type Delhi
 try:
-    ser = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "body > div.container > div.row.no-gutters.negative-margin-mobile > div > div > div.container.container-homepage-search.text-center > form > span > input.form-control.searchbar.form-control.hf-searchbar.tt-input")))
+    ser = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="header-autocomplete"]')))
     ser.send_keys("delhi")
-except expression as identifier:
+    ser.click()
+except:
     print("Search bar not located.")
 
 #Selecting the Place to Visit from dropdown
